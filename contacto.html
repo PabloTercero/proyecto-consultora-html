@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con nosotros para tu proyecto tecnológico.">
+    <title>Contacto - PT Consultorías</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="img/logo-consultoria.png" alt="Logotipo PT Consultorías" class="mi-logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="proyecto-reservas.html">Servicios</a></li>
+                <li><a href="cronologia.html">Cronología</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccion-contacto">
+            <h1 style="text-align: center;">Contacta con Nosotros</h1>
+
+            <form action="https://morning-paper-a0fc.contry-1990.workers.dev" method="POST">
+                
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+
+                <label for="motivo">Motivo:</label>
+                <select id="motivo" name="motivo">
+                    <option value="presupuesto">Presupuesto</option>
+                    <option value="informacion">Información General</option>
+                    <option value="soporte">Soporte Técnico</option>
+                </select>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" minlength="10" required></textarea>
+
+                <input type="checkbox" id="privacidad" name="privacidad" required>
+                <label for="privacidad">Acepto la privacidad.</label>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PT Consultorías. Todos los derechos reservados.</p>
+        <p><a href="#">Aviso Legal</a> | <a href="#">Redes Sociales</a></p>
+    </footer>
+
+</body>
+</html>

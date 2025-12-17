@@ -1,0 +1,339 @@
+/* 
+   HITO 1: FUNDAMENTOS Y TIPOGRAFÍA (15 Puntos) */
+
+/* 1. Importación de Google Fonts (OBLIGATORIO) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* 2. Variables CSS (Paleta de Colores) */
+:root {
+    --color-primario: #0056b3;
+    --color-oscuro: #333;
+    --color-claro: #f4f4f4;
+    --color-blanco: #fff;
+    --fuente-principal: 'Roboto', sans-serif; /* Fuente importada */
+}
+
+/* 3. Reset del Modelo de Caja (Box-Sizing) */
+* {
+    box-sizing: border-box;
+}
+
+/* 4. Estilos Generales del Body */
+body {
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    color: var(--color-oscuro);
+    
+    /* BONUS (+5 Puntos): Efecto Parallax */
+    background-image: url('../img/fondo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Esto crea el efecto de profundidad */
+    
+    margin: 0;
+    padding: 1.25rem; /* Unidades relativas (rem) obligatorias */
+    font-size: 1rem;
+}
+
+/* HITO 2: FLEXBOX Y NAVEGACIÓN (30 Puntos)*/
+
+header {
+    margin-bottom: 1.25rem; 
+}
+
+/* Logo */
+.logo-link {
+    display: inline-block;
+}
+
+.mi-logo {
+    max-width: 12.5rem; /* ~200px */
+    height: auto;
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+/* Menú de Navegación (Flexbox ) */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-oscuro);
+    border-radius: 4px;
+    
+    /* FLEXBOX ACTIVADO */
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* hace que los elementos bajen si no caben */
+}
+
+nav ul li {
+    border-right: 1px solid #bbb;
+}
+
+nav ul li:last-child {
+    border-right: none;
+}
+
+nav ul li a {
+    display: block;
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 0.9rem 1.25rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
+/*  HITO 4: COMPONENTES (FORMULARIOS Y TABLAS) */
+
+/* 1. Formularios */
+form {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    max-width: 31.25rem; /* ~500px */
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    margin: 2.5rem auto;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Feedback Visual (Focus) */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+}
+
+textarea {
+    height: 6.25rem;
+    resize: vertical;
+}
+
+button, input[type="submit"] {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background: #004494;
+}
+
+input[type="checkbox"] + label {
+    font-weight: normal;
+    display: inline-block;
+    margin-left: 0.6rem;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-top: 1rem;
+    vertical-align: middle;
+}
+
+/* 2. Tablas (Cronología) */
+.tabla-contenedor {
+    overflow-x: auto;
+    margin-top: 1.25rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+/* Efecto Zebra (Filas alternas) - REQUISITO */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+
+/* ESTILOS ESPECÍFICOS POR PÁGINA */
+
+/* --- A. Página de INICIO (Hero y Servicios) --- */
+.hero-section {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--color-oscuro);
+    background: rgba(255,255,255,0.85);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    
+    /* Centrado vertical y horizontal con Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-titulo {
+    font-size: 2.5rem; 
+    margin-bottom: 1rem;
+}
+
+.hero-texto {
+    font-size: 1.2rem; 
+    margin-bottom: 2rem;
+}
+
+.btn-cta {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #004494;
+}
+
+.titulo-servicios {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.galeria-flex {
+    display: flex;
+    flex-wrap: wrap; /* REQUISITO: Wrap */
+    gap: 20px;
+    justify-content: center;
+}
+
+.tarjeta-servicio {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 8px;
+    flex: 1 1 300px; /* Flex-basis: 300px */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- B. Página de SERVICIOS/PRODUCTO (Auditoría) --- */
+.contenedor-producto {
+    display: flex; /* Layout Flexbox Principal */
+    gap: 2rem;
+    padding: 1.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.contenido-principal {
+    flex-grow: 1; /* Ocupa el espacio restante (REQUISITO) */
+}
+
+.barra-lateral {
+    flex-basis: 18rem; /* Ancho fijo relativo */
+    flex-shrink: 0;
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    height: fit-content;
+}
+
+.img-producto {
+    display: block;
+    width: 100%;
+    max-width: 30rem; /* Limita el tamaño de la foto */
+    height: auto;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer Común */
+footer {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: rgba(255,255,255,0.9); /* Pequeño fondo para leer mejor */
+}
+
+/* HITO 3: RESPONSIVE DESIGN (Media Queries)*/
+
+@media (max-width: 768px) {
+    /* 1. Menú Móvil Vertical */
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        border-right: none;
+        border-bottom: 1px solid #444;
+        width: 100%;
+    }
+
+    /* 2. Colapso de Columnas (Página Auditoría) */
+    .contenedor-producto {
+        flex-direction: column;
+    }
+    
+    .barra-lateral {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    /* 3. Ajustes de Formulario */
+    form {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+}
